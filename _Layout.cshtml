@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.foundation.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: azure;
+            padding: 20px;
+            border: 2px solid green;
+        }
+        legend {
+            display: block;
+          width: auto;
+            max-width: 100%;
+            padding: 2px 5px;
+             margin-bottom: 0px; 
+            font-size: 18px;
+            line-height: inherit;
+            color: inherit;
+            white-space: normal;
+            border-top: 1px solid green;
+            border-left: 1px solid green;
+            border-right: 1px solid green;
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+                @Html.ActionLink("Excel File Upload", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+          
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+ 		            <li class="nav-item">@Html.ActionLink("Excel Upload", "ExcelUpload", "Home")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Best Regard Mohammad Ismial </p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
